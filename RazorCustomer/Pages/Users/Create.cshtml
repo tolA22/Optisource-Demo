@@ -1,0 +1,69 @@
+﻿@page
+@model RazorCustomer.Models.Users.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-offset-3 col-md-6">
+            <div class="row">
+                <div class=" col-12">
+                    <div class=" pt-5 text-center text-primary">
+                        <h2 id="htext" class="pt-5">Hello, Friend!</h2>
+                        <h5 class="pt-1" id="wbtext">Enter your details and start a journey with us.</h5>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="User.FirstName" class="control-label"></label>
+                            <input asp-for="User.FirstName" class="form-control" />
+                            <span asp-validation-for="User.FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="User.Lastname" class="control-label"></label>
+                            <input asp-for="User.Lastname" class="form-control" />
+                            <span asp-validation-for="User.Lastname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="User.Password" class="control-label"></label>
+                            <input asp-for="User.Password" class="form-control" type="password" />
+                            <span asp-validation-for="User.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="User.Email" class="control-label"></label>
+                            <input asp-for="User.Email" class="form-control" />
+                            <span asp-validation-for="User.Email" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-6 text-center">
+                                <span class="text-danger">@Model.msg</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-6 text-center">
+                                <input type="submit" name="submit" value="Create" class="pt-2 btn btn-primary text-center" />
+                                <h6 id="wbtext" class="makeGray p-4">Have an account? <a class="text-primary" asp-page="/index">Sign in</a></h6>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    
+
+@*<div>
+        <a asp-page="Index">Back to List</a>
+    </div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,61 @@
+﻿@page
+@model RazorCustomer.Models.Users.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-offset-3 col-md-6">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="pt-5 text-center text-primary">
+                            <h2 id="htext" class="pt-3">Hello!</h2>
+                            <h5 class="makeGray">Don't forget to click save.</h5>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <form method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="User.ID" />
+                            <div class="form-group">
+                                <label asp-for="User.FirstName" class="control-label"></label>
+                                <input asp-for="User.FirstName" class="form-control" />
+                                <span asp-validation-for="User.FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="User.Lastname" class="control-label"></label>
+                                <input asp-for="User.Lastname" class="form-control" />
+                                <span asp-validation-for="User.Lastname" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="User.Password" class="control-label"></label>
+                                <input asp-for="User.Password" class="form-control" type="password" />
+                                <span asp-validation-for="User.Password" class="text-danger"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-6 text-center">
+                                    <input type="submit" value="Save" class="btn btn-primary" />
+                                    @*<h6 id="wbtext" class="makeGray p-4">Don't have an account? <a class="text-primary" asp-page="/Users/Create">Create</a></h6>*@
+                                </div>
+                            </div>
+                            @*<div class="form-group">
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </div>*@
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <a asp-page="./Index" class="glyphicon glyphicon-home">Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }

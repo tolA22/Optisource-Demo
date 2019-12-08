@@ -1,0 +1,50 @@
+﻿@page
+@model RazorCustomer.Models.Users.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-offset-3 col-md-6">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="pt-5 text-center text-primary">
+                            <h2 id="htext" class="pt-3">Hello!</h2>
+                            <h5 class="makeGray">Here are your details.</h5>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.User.FirstName)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.User.FirstName)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.User.Lastname)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.User.Lastname)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.User.Email)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.User.Email)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <a asp-page="./Edit"  class="glyphicon glyphicon-edit">Edit</a> |
+                        <a asp-page="./Index"  class="glyphicon glyphicon-home"  >Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

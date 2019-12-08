@@ -1,0 +1,60 @@
+﻿@page
+@model RazorCustomer.Models.Users.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-offset-3 col-md-6">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="pt-5 text-center text-primary">
+                            <h2 id="htext" class="pt-3">Hello!</h2>
+                            <h5 class="makeGray">Welcome to your account @Model.User.Email.</h5>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.User.FirstName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.User.Lastname)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => Model.User.FirstName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => Model.User.Lastname)
+                                    </td>
+
+                                    <td>
+                                        <a asp-page="./Edit" class="glyphicon glyphicon-pencil"></a> |
+                                        <a asp-page="./Details" class="glyphicon glyphicon-zoom-in"></a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-12">
+                        <a asp-page="./logout" class="glyphicon glyphicon-log-out"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
